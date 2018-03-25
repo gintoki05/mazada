@@ -52,16 +52,20 @@
     }
 
     function showData(id) {
+        save_method = 'show';
+        $('input[name=_method]').val('GET');
+        $('#modal-form form')[0].reset();
         $.ajax({
           url: "{{ url('datasiswa') }}" + '/' + id,
           type: "GET",
           dataType: "JSON",
           success: function(data) {
-            $('#modal-form').modal('show');
+            $('#modal-show').modal('show');
             $('.modal-title').text('Tampilkan Data Siswa');
-            $('#id').val(data.id);
-            $('#nis').val(data.nis);
-            $('#nama').val(data.nama);
+            $('#id_show').val(data.id);
+            $('#nis_show').val(data.nis);
+            $('#nama_show').val(data.nama);
+            $('#foto_show').val(data.foto);
           },
           error : function() {
               alert("Tidak Ada Data Siswa");

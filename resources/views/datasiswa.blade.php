@@ -55,6 +55,7 @@
     <!-- /.content -->
   </div>
   @include('formdatasiswa')
+  </div>
 
   <!-- /.content-wrapper -->
   @stop

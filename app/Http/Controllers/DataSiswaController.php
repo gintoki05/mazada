@@ -60,7 +60,7 @@ class DataSiswaController extends Controller
      */
     public function show($id)
     {
-        $data = DataSiswa::find($id);
+        $data = DataSiswa::findOrFail($id);
         return $data;
     }
 
