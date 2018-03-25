@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layout.index');
-});
+Route::get('/', 'DashboardController@index');
+Route::get('/datasiswa', 'DataSiswaController@index');
+Route::get('/data-siswa', 'DataSiswaController@dataSiswa');
+Route::resource('datasiswa', 'DataSiswaController');
+Route::get('/datatahun', 'DataTahunController@index');
+
+Route::get('/exportpdf', 'DataSiswaController@exportPDF');
