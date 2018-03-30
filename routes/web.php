@@ -12,9 +12,16 @@
 */
 
 Route::get('/', 'DashboardController@index');
-Route::get('/datasiswa', 'DataSiswaController@index');
-Route::get('/data-siswa', 'DataSiswaController@dataSiswa');
-Route::resource('datasiswa', 'DataSiswaController');
+/* DataSiswa */
+Route::get('/datasiswaaktif', 'DataSiswaAktifController@index');
+Route::get('/data-siswa-aktif', 'DataSiswaAktifController@dataSiswaAktif');
+Route::resource('datasiswaaktif', 'DataSiswaAktifController');
+Route::get('/exportpdf', 'DataSiswaAktifController@exportPDF');
+/* DataTahun */
 Route::get('/datatahun', 'DataTahunController@index');
+Route::get('/data-tahun', 'DataTahunController@dataTahun');
+Route::resource('datatahun', 'DataTahunController');
 
-Route::get('/exportpdf', 'DataSiswaController@exportPDF');
+
+
+

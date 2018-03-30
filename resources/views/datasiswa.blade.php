@@ -35,10 +35,12 @@
               <table id="datasiswa" class="table table-bordered table-hover" width="100%">
                 <thead>
                 <tr>
-                  <th width="30">No</th>
                   <th>NIS</th>
                   <th>Nama</th>
-                  <th>Foto</th>
+                  <th>Tempat Lahir</th>
+                  <th>Tanggal Lahir</th>
+                  <th>Jenis Kelamin</th>
+                  <th>Alamat</th>
                   <th></th>
                 </tr>
                 </thead>

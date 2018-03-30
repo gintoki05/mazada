@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDatasiswaTable extends Migration
+class BuatTabelTahun extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateDatasiswaTable extends Migration
      */
     public function up()
     {
-        Schema::create('datasiswa', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nis');
-            $table->string('nama');
+        Schema::create('tbl_tahun', function (Blueprint $table) {
+            $table->increments('id_tahun');
+            $table->string('tahun');
+            $table->string('semester');
+            $table->tinyInteger('status', 0)->nullable();
+            $table->timestamps();
         });
     }
 
@@ -27,6 +29,6 @@ class CreateDatasiswaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('datasiswa');
+        Schema::dropIfExists('tbl_tahun');
     }
 }

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\DataTahun;
+use Yajra\Datatables\Datatables;
 
 class DataTahunController extends Controller
 {
@@ -34,7 +36,13 @@ class DataTahunController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new DataTahun;
+    	$data->tahun = $request->get('tahun');
+    	$data->semester = $request->get('semester');
+
+    	$data->save();
+
+    	return response()->json($data);
     }
 
     /**
@@ -54,9 +62,10 @@ class DataTahunController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_tahun)
     {
-        //
+         $data = DataTahun::find($id_tahun);
+        return $data;
     }
 
     /**
@@ -66,9 +75,15 @@ class DataTahunController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_tahun)
     {
-        //
+        $data = new DataTahun;
+    	$data->tahun = $request->get('tahun');
+    	$data->semester = $request->get('semester');
+
+    	$data->update();
+
+    	return response()->json($data);
     }
 
     /**
@@ -81,4 +96,17 @@ class DataTahunController extends Controller
     {
         //
     }
+
+      public function dataTahun()
+    {
+      $data = DataTahun::all();
+
+        return Datatables::of($data)
+           ->addColumn('action', function($data){
+                return  '<a onclick="aktif('. $data->id_tahun .')" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-off"></i> Aktifkan</a> '.
+                        '<a onclick="editTahun('. $data->id_tahun .')" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i> Edit</a> ';
+            })
+           ->make(true);
+    }
+
 }

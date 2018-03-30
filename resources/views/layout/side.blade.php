@@ -36,11 +36,19 @@
               <i class="fa fa-th"></i> <span>Data Tahun Akademik</span>
             </a>
           </li>
-          <li>
-            <a href="{{ url('/datasiswa') }}">
-              <i class="fa fa-child"></i> <span>Data Siswa</span>
-            </a>
-          </li>
+          <li class="treeview">
+          <a href="#">
+            <i class="fa fa-child"></i>
+            <span>Data Siswa</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ url('/datasiswa') }}"><i class="fa fa-circle-o"></i> Data Siswa</a></li>
+            <li><a href="{{ url('/datasiswaaktif') }}"><i class="fa fa-circle-o"></i> Data Siswa Aktif</a></li>
+          </ul>
+        </li>
           <li class="treeview">
           <a href="#">
             <i class="fa fa-id-badge"></i>
@@ -53,11 +61,6 @@
             <li><a href="{{ url('/pegawai') }}"><i class="fa fa-circle-o"></i> Pegawai</a></li>
             <li><a href="{{ url('/guru') }}"><i class="fa fa-circle-o"></i> Guru</a></li>
           </ul>
-        </li>
-        <li>
-            <a href="{{ url('/datakelas') }}">
-              <i class="fa fa-building"></i> <span>Data Kelas</span>
-            </a>
         </li>
         <li class="treeview">
           <a href="#">
