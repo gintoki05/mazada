@@ -103,8 +103,8 @@ class DataTahunController extends Controller
 
         return Datatables::of($data)
            ->addColumn('action', function($data){
-                return  '<a onclick="aktif('. $data->id_tahun .')" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-off"></i> Aktifkan</a> '.
-                        '<a onclick="editTahun('. $data->id_tahun .')" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i> Edit</a> ';
+                return  '<a onclick="aktif('. $data->id_tahun .')" class="btn bg-olive btn-sm"><i class="glyphicon glyphicon-off"></i> Aktifkan</a> '.
+                        '<a onclick="editTahun('. $data->id_tahun .')" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i> Edit</a> ';
             })
            ->make(true);
     }

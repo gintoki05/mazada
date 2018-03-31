@@ -135,42 +135,6 @@
       $('#modal-form form')[0].reset();
       $('.modal-title').text('Tambah Data Siswa');
     }
-
-    function showData(id_nis_aktif) {
-        save_method = 'show';
-        $('input[name=_method]').val('GET');
-        $('#modal-show form')[0].reset();
-        $.ajax({
-          url: "{{ url('datasiswaaktif') }}" + '/' + id_nis_aktif,
-          type: "GET",
-          dataType: "JSON",
-          success: function(data) {
-            $('#modal-show').modal('show');
-            $('.modal-title').text('Tampilkan Data Siswa');
-            $('#nis_show').val(data.id_nis_aktif);
-            $('#nama_show').val(data.nama);
-            $('#show_foto').val(data.foto);
-            $('#tempat_lahir').val(data.tempat_lahir);
-            $('#tanggal_lahir').val(data.tgl_lahir);
-            $('#jenis_kelamin').val(data.jenis_kelamin);
-            $('#agama').val(data.agama);
-            $('#sekolah_asal').val(data.sekolah_asal);
-            $('#kelas_diterima').val(data.kelas_diterima);
-            $('#tgl_diterima').val(data.tgl_diterima);
-            $('#alamat').val(data.alamat);
-            $('#nama_ayah').val(data.nama_ayah);
-            $('#nama_ibu').val(data.nama_ibu);
-            $('#pekerjaan_ayah').val(data.pekerjaan_ayah);
-            $('#pekerjaan_ibu').val(data.pekerjaan_ibu);
-            $('#alamat_ortu').val(data.alamat_ortu);
-            $('#nama_wali').val(data.nama_wali);
-            $('#alamat_wali').val(data.alamat_wali);
-          },
-          error : function() {
-              alert("Tidak Ada Data Siswa");
-          }
-        });
-        }
     
 
     function editForm(id_nis_aktif) {

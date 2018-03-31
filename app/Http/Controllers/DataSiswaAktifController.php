@@ -60,8 +60,8 @@ class DataSiswaAktifController extends Controller
      */
     public function show($id_nis_aktif)
     {
-        $data = DataSiswaAktif::findOrFail($id_nis_aktif);
-        return $data;
+        $data = DataSiswaAktif::find($id_nis_aktif);
+        return view('tampilsiswaaktif',compact('data'));
     }
 
     /**
@@ -141,9 +141,9 @@ class DataSiswaAktifController extends Controller
                 return '<img class="rounded-square" width="50" height="50" src="'. url($data->foto) .'" alt="">';
             })
            ->addColumn('action', function($data){
-                return '<a onclick="showData('. $data->id_nis_aktif .')" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-eye-open"></i> Tampilkan</a> ' .
-                       '<a onclick="editForm('. $data->id_nis_aktif .')" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-edit"></i> Edit</a> ' .
-                       '<a onclick="deleteData('. $data->id_nis_aktif .')" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i> Hapus</a>';
+                return '<a href="/datasiswaaktif/'.$data->id_nis_aktif.'" class="btn bg-purple btn-sm"><i class="glyphicon glyphicon-eye-open"></i> Tampilkan</a> '.
+                       '<a onclick="editForm('. $data->id_nis_aktif .')" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-edit"></i> Edit</a> ' .
+                       '<a onclick="deleteData('. $data->id_nis_aktif .')" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i> Hapus</a>';
             })
             ->rawColumns(['show_foto', 'action'])->make(true);
     }

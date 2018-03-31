@@ -22,8 +22,10 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title"><i class="fa fa-child"></i><b>&nbsp;Data Tahun Akademik</b></h3>
-              <a onclick="addTahun()" class="btn btn-block btn-primary">Tambah Data Tahun</a>
+                <div class="col-sm-4 pull-right">
+                  <a onclick="addTahun()" class="btn btn-block btn-primary">Tambah Data Tahun</a>
             </div>
+          </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="datatahun" class="table table-bordered table-hover" width="100%">

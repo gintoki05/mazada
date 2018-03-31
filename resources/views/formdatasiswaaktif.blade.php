@@ -1,7 +1,7 @@
 <div class="modal" id="modal-form" tabindex="1" role="dialog" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <form id="form-contact" method="post" class="form-horizontal" data-toggle="validator" enctype="multipart/form-data">
+            <form id="form-datasiswa" method="post" class="form-horizontal" data-toggle="validator" enctype="multipart/form-data">
                 {{ csrf_field() }} {{ method_field('POST') }}
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -15,7 +15,7 @@
                     <div class="form-group">
                         <label for="nis" class="col-md-3 control-label">NIS</label>
                         <div class="col-md-6">
-                            <input type="text" id="nis_show" name="nis" class="form-control" autofocus required disabled>
+                            <input type="text" id="nis_show" name="nis" class="form-control" autofocus disabled>
                             <span class="help-block with-errors"></span>
                         </div>
                     </div>
@@ -166,7 +166,7 @@
     </div>
 </div>
 {{--  Tampilkan Data  --}}
-<div class="modal" id="modal-show" tabindex="1" role="dialog" aria-hidden="true" data-backdrop="static">
+{{--  <div class="modal" id="modal-show" tabindex="1" role="dialog" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <form id="form-contact" method="post" class="form-horizontal" data-toggle="validator" enctype="multipart/form-data">
@@ -331,4 +331,4 @@
             </form>
         </div>
     </div>
-</div>
+</div>  --}}
